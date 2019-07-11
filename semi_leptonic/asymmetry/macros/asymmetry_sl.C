@@ -36,7 +36,7 @@ void asymmetry_sl()
 	
 	FileSelector fs;
 	std::vector<FileSelector> rootfiles;
-	std::ifstream in( "/home/ilc/yokugawa/macros/semi_leptonic/input/record.txt" );
+	std::ifstream in( "/home/ilc/vlohezic/working/VertexMacro/semi_leptonic/input/record.txt" );
 
 	while( fs.input(in) ){
 		rootfiles.push_back(fs);
@@ -156,14 +156,14 @@ void asymmetry_sl()
   ////////////// Style Setting //////////////
 
 	cosReco_l5->SetLineWidth(3);
-  cosReco_l5->SetLineColor(kBlue);
-  cosReco_l5->SetMarkerColor(kBlue);
-  cosReco_l5->SetMarkerStyle(21);
+	cosReco_l5->SetLineColor(kBlue);
+	cosReco_l5->SetMarkerColor(kBlue);
+	cosReco_l5->SetMarkerStyle(21);
 
 	cosReco_s5->SetLineWidth(3);
-  cosReco_s5->SetLineColor(kRed);
-  cosReco_s5->SetMarkerColor(kRed);
-  cosReco_s5->SetMarkerStyle(22);
+	cosReco_s5->SetLineColor(kRed);
+	cosReco_s5->SetMarkerColor(kRed);
+	cosReco_s5->SetMarkerStyle(22);
 	cosReco_s5->SetLineStyle(2);
 
 	cosGen_l5->SetLineWidth(3);
@@ -177,19 +177,20 @@ void asymmetry_sl()
 	cosGen_l5->SetStats(0);
 	cosGen_l5->SetMinimum(0);
 
-  cosGen_l5->SetTitle("e_{L}^{-}e_{R}^{+}#rightarrow t#bar{t} @ 500GeV, 46 fb^{-1}");
-  cosGen_l5->GetXaxis()->SetTitleOffset(1.1);
-  cosGen_l5->GetXaxis()->SetTitleFont(42);
-  cosGen_l5->GetXaxis()->SetTitleSize(0.05);
-  cosGen_l5->GetXaxis()->SetLabelSize(0.05);
-  cosGen_l5->GetXaxis()->SetLabelOffset(0.015);
+	cosGen_l5->SetTitle("e_{L}^{-}e_{R}^{+}#rightarrow t#bar{t} @ 500GeV");
+	//cosGen_l5->SetTitle("e_{R}^{-}e_{L}^{+}#rightarrow t#bar{t} @ 500GeV");
+	cosGen_l5->GetXaxis()->SetTitleOffset(1.1);
+	cosGen_l5->GetXaxis()->SetTitleFont(42);
+	cosGen_l5->GetXaxis()->SetTitleSize(0.05);
+	cosGen_l5->GetXaxis()->SetLabelSize(0.05);
+	cosGen_l5->GetXaxis()->SetLabelOffset(0.015);
 
-  cosGen_l5->GetYaxis()->SetTitle("entries / 0.1 rad");
+	cosGen_l5->GetYaxis()->SetTitle("entries / 0.1 rad");
 	cosGen_l5->GetYaxis()->SetTitleOffset(1.4);
-  cosGen_l5->GetYaxis()->SetTitleFont(42);
-  cosGen_l5->GetYaxis()->SetTitleSize(0.05);
-  cosGen_l5->GetYaxis()->SetLabelSize(0.05);
-  cosGen_l5->GetYaxis()->SetLabelOffset(0.015);
+	cosGen_l5->GetYaxis()->SetTitleFont(42);
+	cosGen_l5->GetYaxis()->SetTitleSize(0.05);
+	cosGen_l5->GetYaxis()->SetLabelSize(0.05);
+	cosGen_l5->GetYaxis()->SetLabelOffset(0.015);
 
 
   ////////////// Fitting //////////////
@@ -227,7 +228,7 @@ void asymmetry_sl()
 	leg->SetShadowColor(0);
 	leg->Draw();
 
-	QQBARLabel(0.8,0.2,"",1);
+	QQBARLabel(0.8,0.2,NULL,1);
 
 	c1->Update();
 
